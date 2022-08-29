@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 	s.license        = license
 	s.authors        = author
 	# s.source         = { :git => repository, :tag => version }
-	s.source         = { :git => repository }
+	s.source         = { :git => "https://github.com/wumke/react-native-exit-app" }
 	s.platform       = :ios, "9.0"
 	s.preserve_paths = 'README.md', 'package.json', '*.js'
 	s.source_files   = 'ios/RNExitApp/**/*.{h,m}'
