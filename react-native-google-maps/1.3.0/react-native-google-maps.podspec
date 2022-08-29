@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.source               = { :git => "https://github.com/react-native-maps/react-native-maps.git", :tag=> "v#{s.version}" }
   s.source_files         = "ios/AirGoogleMaps/**/*.{h,m}"
   s.public_header_files  = "ios/AirGoogleMaps/**/*.h"
-  # s.compiler_flags = '-DHAVE_GOOGLE_MAPS=1', '-DHAVE_GOOGLE_MAPS_UTILS=1', '-fno-modules'
+  s.compiler_flags = '-DHAVE_GOOGLE_MAPS=1', '-DHAVE_GOOGLE_MAPS_UTILS=1', '-fno-modules'
   s.static_framework     = true
 
   s.pod_target_xcconfig  = { "HEADER_SEARCH_PATHS" => "\"$(PODS_TARGET_SRCROOT)/react-native-google-maps/\" \"$(PODS_ROOT)/Google-Maps-iOS-Utils/\" \"$(PODS_ROOT)/Google-Maps-iOS-Utils/Heatmap/\"", "DEFINES_MODULE" => "YES" }
