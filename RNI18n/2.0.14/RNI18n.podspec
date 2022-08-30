@@ -9,8 +9,7 @@ Pod::Spec.new do |s|
   s.summary      = "React Native + i18n.js"
   s.license      = "MIT"
   s.author       = { "Alexander Zaytsev" => "alexander@say26.com" }
-  s.ios.deployment_target = "7.0"
-  s.tvos.deployment_target = "9.0"
+  s.ios.deployment_target = "11.0"
   s.source       = { git: "https://github.com/AlexanderZaytsev/react-native-i18n.git", tag: "v" + s.version.to_s }
   s.source_files = "ios/**/*.{h,m}"
   s.requires_arc = true
@@ -18,9 +17,8 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
                             "USE_HEADERMAP" => "YES",
                             "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
-                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React/\" \"$(PODS_ROOT)/React-Core/\""
+                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\""
                           }
 
-  s.dependency 'React'
   s.dependency 'React-Core'
 end
