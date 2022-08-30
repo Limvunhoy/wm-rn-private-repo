@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target    = "11.0"
   s.requires_arc              = true
 
-  s.source                    = { :git => package["repository"]["url"], :tag => s.version }
+  s.source                    = { :git => "https://github.com/zoontek/react-native-permissions.git", :tag => s.version }
   s.source_files              = "ios/LocationAlways/*.{h,m}"
 end
