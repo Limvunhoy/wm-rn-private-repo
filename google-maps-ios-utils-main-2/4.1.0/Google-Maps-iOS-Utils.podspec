@@ -26,45 +26,49 @@ Pod::Spec.new do |s|
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
-  s.subspec 'QuadTree' do |sp|
-    sp.public_header_files = "src/#{sp.base_name}/**/*.h"
-    sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
-  end
+  s.public_header_files = "src/**/*.h"
+  s.source_files = "src/**/*.{h,m,swift}"
+  s.exclude_files = "src/**/GMUMarkerClustering.h"
 
-  s.subspec 'Clustering' do |sp|
-    sp.public_header_files = "src/#{sp.base_name}/**/*.h"
-    sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
-    sp.exclude_files = "src/#{sp.base_name}/GMUMarkerClustering.h"
-    sp.dependency 'Google-Maps-iOS-Utils/QuadTree'
-  end
+  # s.subspec 'QuadTree' do |sp|
+  #   sp.public_header_files = "src/#{sp.base_name}/**/*.h"
+  #   sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
+  # end
 
-  s.subspec 'Geometry' do |sp|
-     sp.public_header_files = "src/#{sp.base_name}/**/*.h"
-     sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
-  end
+  # s.subspec 'Clustering' do |sp|
+  #   sp.public_header_files = "src/#{sp.base_name}/**/*.h"
+  #   sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
+  #   sp.exclude_files = "src/#{sp.base_name}/GMUMarkerClustering.h"
+  #   sp.dependency 'Google-Maps-iOS-Utils/QuadTree'
+  # end
 
-  s.subspec 'Heatmap' do |sp|
-    sp.public_header_files = "src/#{sp.base_name}/**/*.h"
-    sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
-    sp.dependency 'Google-Maps-iOS-Utils/QuadTree'
-  end
+  # s.subspec 'Geometry' do |sp|
+  #    sp.public_header_files = "src/#{sp.base_name}/**/*.h"
+  #    sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
+  # end
 
-  s.subspec 'GeometryUtils' do |sp|
-    sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
-  end
+  # s.subspec 'Heatmap' do |sp|
+  #   sp.public_header_files = "src/#{sp.base_name}/**/*.h"
+  #   sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
+  #   sp.dependency 'Google-Maps-iOS-Utils/QuadTree'
+  # end
 
-  s.test_spec 'Tests' do |unit_tests|
-    unit_tests.source_files = [
-      "GoogleMapsUtils/GoogleMapsUtils.h",
-      "test/common/Model/*.{h,m,swift}",
-      "test/unit/**/*.{h,m,swift}",
-    ]
-    unit_tests.resources = [
-      "test/resources/**/*.{geojson,kml}"
-    ]
-    unit_tests.pod_target_xcconfig = {
-      'SWIFT_OBJC_BRIDGING_HEADER' => "$(PODS_TARGET_SRCROOT)/test/unit/BridgingHeader/UnitTest-Bridging-Header.h"
-    }
-    unit_tests.dependency 'OCMock'
-  end
+  # s.subspec 'GeometryUtils' do |sp|
+  #   sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
+  # end
+
+  # s.test_spec 'Tests' do |unit_tests|
+  #   unit_tests.source_files = [
+  #     "GoogleMapsUtils/GoogleMapsUtils.h",
+  #     "test/common/Model/*.{h,m,swift}",
+  #     "test/unit/**/*.{h,m,swift}",
+  #   ]
+  #   unit_tests.resources = [
+  #     "test/resources/**/*.{geojson,kml}"
+  #   ]
+  #   unit_tests.pod_target_xcconfig = {
+  #     'SWIFT_OBJC_BRIDGING_HEADER' => "$(PODS_TARGET_SRCROOT)/test/unit/BridgingHeader/UnitTest-Bridging-Header.h"
+  #   }
+  #   unit_tests.dependency 'OCMock'
+  # end
 end
