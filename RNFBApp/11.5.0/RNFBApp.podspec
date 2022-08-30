@@ -25,7 +25,10 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig    = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/packages/\" \"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_ROOT)/DoubleConversion\"" }
 
   # React Native dependencies
+  s.dependency          'FBLazyVector'
   s.dependency          'React-Core'
+  s.dependency          'RCTRequired'
+  s.dependency          'RCT-Folly', folly_version
 
   if defined?($FirebaseSDKVersion)
     Pod::UI.puts "#{s.name}: Using user specified Firebase SDK version '#{$FirebaseSDKVersion}'"
@@ -34,7 +37,6 @@ Pod::Spec.new do |s|
 
   # Firebase dependencies
   s.dependency          'Firebase/CoreOnly', firebase_sdk_version
-  s.dependency "RCT-Folly", folly_version
 
   if defined?($RNFirebaseAsStaticFramework)
     Pod::UI.puts "#{s.name}: Using overridden static_framework value of '#{$RNFirebaseAsStaticFramework}'"
