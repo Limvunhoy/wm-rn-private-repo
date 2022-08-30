@@ -13,6 +13,11 @@ Pod::Spec.new do |s|
   s.source         = { :git => "https://github.com/rt2zz/react-native-contacts.git" } 
   s.source_files   = 'ios/RCTContacts/*.{h,m}'
 
-  s.dependency 'React-Core'
+  s.pod_target_xcconfig = {
+                            "USE_HEADERMAP" => "YES",
+                            "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
+                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\""
+                          }
 
+  s.dependency 'React-Core'
 end
