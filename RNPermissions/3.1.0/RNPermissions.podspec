@@ -18,8 +18,8 @@ Pod::Spec.new do |s|
   s.source                    = { :git => 'https://github.com/zoontek/react-native-permissions.git', :tag => s.version }
   s.source_files              = "ios/*.{h,m}"
 
-  s.dependency "Permission-AppTrackingTransparency"
-  s.dependency "Permission-LocationWhenInUse"
-  s.dependency "Permission-LocationAlways"
-  s.dependency "Permission-Contacts"
+  # s.dependency "Permission-AppTrackingTransparency"
+  # s.dependency "Permission-LocationWhenInUse"
+  # s.dependency "Permission-LocationAlways"
+  # s.dependency "Permission-Contacts"
 end
