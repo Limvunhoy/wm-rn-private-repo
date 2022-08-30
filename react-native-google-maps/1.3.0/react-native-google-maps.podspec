@@ -16,6 +16,11 @@ Pod::Spec.new do |s|
   s.public_header_files  = "ios/AirGoogleMaps/**/*.h"
   s.compiler_flags = '-DHAVE_GOOGLE_MAPS=1', '-DHAVE_GOOGLE_MAPS_UTILS=1', '-fno-modules'
   s.static_framework     = true
+  s.pod_target_xcconfig = {
+                            "USE_HEADERMAP" => "YES",
+                            "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
+                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\""
+                          }
 
   s.dependency 'React-Core'
   s.dependency 'GoogleMaps', '7.0.0'

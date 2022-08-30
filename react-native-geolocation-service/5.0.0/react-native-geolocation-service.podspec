@@ -15,7 +15,13 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m,swift}"
 
   s.swift_version = "5.0"
+  s.pod_target_xcconfig = {
+                            "USE_HEADERMAP" => "YES",
+                            "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
+                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\""
+                          }
 
-  s.dependency "React"
+  s.dependency 'React'
+  s.dependency 'React-Core'
 end
 
