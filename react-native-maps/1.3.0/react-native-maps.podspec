@@ -14,5 +14,11 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/react-native-maps/react-native-maps.git", :tag=> "v#{s.version}" }
   s.source_files  = "ios/AirMaps/**/*.{h,m}"
 
-  s.dependency 'React-Core'
+  s.pod_target_xcconfig = {
+                            "USE_HEADERMAP" => "YES",
+                            "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
+                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\""
+                          }
+
+	s.dependency 'React-Core'
 end
