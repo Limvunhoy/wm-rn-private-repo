@@ -24,6 +24,6 @@ Pod::Spec.new do |s|
 
   s.dependency 'React-Core'
   s.dependency 'GoogleMaps', '7.0.0'
-  s.dependency 'Google-Maps-iOS-Utils'
+  s.dependency 'Google-Maps-iOS-Utils', '4.1.0'
   s.dependency 'react-native-maps'
 end
