@@ -15,6 +15,14 @@ Pod::Spec.new do |s|
   s.source_files   = 'RNVectorIconsManager/**/*.{h,m}'
   s.resources      = "Fonts/*.ttf"
   s.preserve_paths = "**/*.js"
+  
+  s.pod_target_xcconfig = {
+                            "USE_HEADERMAP" => "YES",
+                            "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
+                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\""
+                          }
+
   s.dependency 'React'
+  s.dependency 'React-Core'
 
 end
