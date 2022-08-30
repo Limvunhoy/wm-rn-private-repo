@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
                             "USE_HEADERMAP" => "YES",
                             "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
-                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/JWT/\" \"$(PODS_ROOT)/SSZipArchive/\" \"$(PODS_ROOT)/Base64/\""
+                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\" \"$(PODS_ROOT)/JWT/\" \"$(PODS_ROOT)/SSZipArchive/\" \"$(PODS_ROOT)/Base64/\""
                           }
 
   # Note: Even though there are copy/pasted versions of some of these dependencies in the repo, 
@@ -30,6 +30,7 @@ Pod::Spec.new do |s|
   # s.dependency 'Base64', '~> 1.1'
   
   s.dependency 'React'
+  s.dependency 'React-Core'
   s.dependency 'SSZipArchive'
   s.dependency 'JWT'
   s.dependency 'Base64'
