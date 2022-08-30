@@ -18,8 +18,9 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
                             "USE_HEADERMAP" => "YES",
                             "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
-                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\""
+                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React/\" \"$(PODS_ROOT)/React-Core/\""
                           }
 
+  s.dependency 'React'
   s.dependency 'React-Core'
 end
