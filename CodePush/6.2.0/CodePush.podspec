@@ -14,8 +14,13 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '9.0'
   s.preserve_paths = '*.js'
   s.library        = 'z'
-  s.source_files = 'ios/CodePush/**/*.{h,m}'
+  s.source_files = 'ios/CodePush/*.{h,m}'
   s.public_header_files = ['ios/CodePush/CodePush.h']
+  s.pod_target_xcconfig = {
+                            "USE_HEADERMAP" => "YES",
+                            "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
+                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/JWT/\" \"$(PODS_ROOT)/SSZipArchive/\" \"$(PODS_ROOT)/Base64/\""
+                          }
 
   # Note: Even though there are copy/pasted versions of some of these dependencies in the repo, 
   # we explicitly let CocoaPods pull in the versions below so all dependencies are resolved and 
