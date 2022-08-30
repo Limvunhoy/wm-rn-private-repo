@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "10.0"
   s.cocoapods_version   = '>= 1.10.0'
   s.source_files        = "packages/app/ios/**/*.{h,m}"
-  s.pod_target_xcconfig    = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/RCT-Folly\"" }
+  s.pod_target_xcconfig    = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\" \"$(PODS_ROOT)/RCT-Folly\"" }
 
   # React Native dependencies
   s.dependency          'React-Core'

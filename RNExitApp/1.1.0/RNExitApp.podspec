@@ -29,6 +29,5 @@ Pod::Spec.new do |s|
                             "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\""
                           }
 
-	s.dependency 'React'
 	s.dependency 'React-Core'
 end
