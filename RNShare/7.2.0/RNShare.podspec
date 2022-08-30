@@ -14,7 +14,14 @@ Pod::Spec.new do |s|
 
   s.source_files  = "ios/**/*.{h,m}"
 
-  s.dependency "React-Core"
+  s.pod_target_xcconfig = {
+                            "USE_HEADERMAP" => "YES",
+                            "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
+                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\""
+                          }
+
+  s.dependency 'React'
+  s.dependency 'React-Core'
 
   s.ios.weak_framework = 'LinkPresentation'
 end
