@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
   s.subspec 'Clustering' do |sp|
     sp.public_header_files = "src/#{sp.base_name}/**/*.h"
     sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
-    sp.exclude_files = "src/#{sp.base_name}/GMUMarkerClustering.h"
+    # sp.exclude_files = "src/#{sp.base_name}/GMUMarkerClustering.h"
     sp.dependency 'Google-Maps-iOS-Utils/QuadTree'
   end
 
@@ -59,6 +59,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'GeometryUtils' do |sp|
+    sp.public_header_files = "src/#{sp.base_name}/**/*.h"
     sp.source_files = "src/#{sp.base_name}/**/*.{h,m,swift}"
   end
   
