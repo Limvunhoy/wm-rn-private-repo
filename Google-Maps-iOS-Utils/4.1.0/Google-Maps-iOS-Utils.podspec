@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     # 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
     'USE_HEADERMAP' => 'NO',
     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++14',
-    'HEADER_SEARCH_PATHS' => "\"$(PODS_TARGET_SRCROOT)/Google-Maps-iOS-Utils/\""
+    'HEADER_SEARCH_PATHS' => "\"$(PODS_TARGET_SRCROOT)/Google-Maps-iOS-Utils/\" \"$(PODS_ROOT)/Google-Maps-iOS-Utils/Clustering/\" \"$(PODS_ROOT)/Google-Maps-iOS-Utils/Geometry/\" \"$(PODS_ROOT)/Google-Maps-iOS-Utils/GeometryUtils/\" \"$(PODS_ROOT)/Google-Maps-iOS-Utils/Heatmap/\" \"$(PODS_ROOT)/Google-Maps-iOS-Utils/QuadTree/\""
   }
 
   s.subspec 'QuadTree' do |sp|
