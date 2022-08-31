@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
                             "USE_HEADERMAP" => "YES",
                             "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
-                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\" \"$(PODS_ROOT)/Google-Maps-iOS-Utils/\""
+                            "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/React-Core/Default/\" \"$(PODS_ROOT)/Google-Maps-iOS-Utils/\" \"$(PODS_ROOT)/react-native-maps/\""
                           }
 
   s.dependency 'React-Core'
-  s.dependency 'GoogleMaps', '7.0.0'
-  s.dependency 'Google-Maps-iOS-Utils', '4.1.0'
-  # s.dependency 'react-native-maps'
+  s.dependency 'GoogleMaps'
+  s.dependency 'Google-Maps-iOS-Utils'
+  s.dependency 'react-native-maps'
 end
