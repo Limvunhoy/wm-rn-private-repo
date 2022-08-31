@@ -23,8 +23,13 @@ Pod::Spec.new do |s|
 
   s.dependency 'GoogleMaps'
   s.static_framework = true
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  # s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.pod_target_xcconfig = { 
+    # 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
+    'USE_HEADERMAP' => 'NO',
+    'CLANG_CXX_LANGUAGE_STANDARD' => 'c++14',
+    'HEADER_SEARCH_PATHS' => "\"$(PODS_TARGET_SRCROOT)/Google-Maps-iOS-Utils/\""
+  }
 
   s.subspec 'QuadTree' do |sp|
     sp.public_header_files = "src/#{sp.base_name}/**/*.h"
